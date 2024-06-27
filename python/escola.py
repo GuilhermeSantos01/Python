@@ -2,7 +2,7 @@ import mysql.connector
 from getpass import getpass
 
 # Configurações de conexão
-config = {'user': 'root','password': '0321','host': 'localhost','database': 'escola',}
+config = {'user': 'root','password': '****','host': 'localhost','database': 'escola',}
 
 # Conectar ao banco de dados
 connector = mysql.connector.connect(**config)
