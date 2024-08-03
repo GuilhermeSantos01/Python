@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas dos Alunos</title>
+</head>
+<body>
+    <h1>Notas dos Alunos</h1>
+
+    <form method="post" action="">
+        <label for="nome_aluno">Nome do Aluno:</label>
+        <input type="text" id="nome_aluno" name="nome_aluno" required><br>
+
+        <label for="nota">Nota:</label>
+        <input type="number" id="nota" name="nota" step="0.01" required><br>
+
+        <button type="submit">Enviar Nota</button>
+    </form>
+
+    <button onclick="document.getElementById('tabela_notas').style.display='block'">
+        Mostrar Tabela de Notas
+    </button>
+
+    <table id="tabela_notas" border="1" style="display:none;">
+        <tr>
+            <th>Nome</th>
+            <th>Nota</th>
+        </tr>
+        {% for nome, nota in notas %}
+        <tr>
+            <td>{{ nome }}</td>
+            <td>{{ nota }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <p><a href="/">Voltar</a></p>
+</body>
+</html>
